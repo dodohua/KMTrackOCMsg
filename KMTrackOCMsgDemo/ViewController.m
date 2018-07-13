@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MethodHook.h"
+#import "KMMethodHook.h"
 #import "TestObject.h"
 #import <WebKit/WebKit.h>
 #import <AVKit/AVKit.h>
@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
 //    [MethodHook hookNotRecognizeSelector:NSClassFromString(@"UIView")];
-    [MethodHook hookNotRecognizeSelector:[TestObject class]];
+    [KMMethodHook trackSelectorMsg:[TestObject class]];
     
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     // 允许视频播放

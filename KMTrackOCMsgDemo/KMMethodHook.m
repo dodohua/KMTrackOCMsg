@@ -6,12 +6,12 @@
 //  Copyright © 2016年 yy. All rights reserved.
 //
 
-#import "MethodHook.h"
+#import "KMMethodHook.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import <Foundation/Foundation.h>
 #import "NSInvocation+OCMAdditions.h"
-@implementation MethodHook
+@implementation KMMethodHook
 
 void crashFunction(id self, SEL _cmd, ...) {
     id value = nil;
@@ -182,14 +182,14 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
     
 }
 
-+ (void)hookNotRecognizeSelector:(Class)cls {
-    [MethodHook replaceAllSelector:cls];
-    [MethodHook hookMethedClass:cls hookSEL:@selector(methodSignatureForSelector:) originalSEL:@selector(methodSignatureForSelectorOriginal:) myselfSEL:@selector(methodSignatureForSelectorMySelf:) isClassMethod:NO];
++ (void)trackSelectorMsg:(Class)cls {
+    [KMMethodHook replaceAllSelector:cls];
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(methodSignatureForSelector:) originalSEL:@selector(methodSignatureForSelectorOriginal:) myselfSEL:@selector(methodSignatureForSelectorMySelf:) isClassMethod:NO];
     
-    [MethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:NO];
-    [MethodHook hookMethedClass:cls hookSEL:@selector(methodSignatureForSelector:) originalSEL:@selector(methodSignatureForSelectorOriginal:) myselfSEL:@selector(methodSignatureForSelectorMySelf:) isClassMethod:YES];
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:NO];
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(methodSignatureForSelector:) originalSEL:@selector(methodSignatureForSelectorOriginal:) myselfSEL:@selector(methodSignatureForSelectorMySelf:) isClassMethod:YES];
     
-    [MethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:YES];
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:YES];
     
 }
 - (NSMethodSignature *)methodSignatureForSelectorMySelf:(SEL)aSelector {

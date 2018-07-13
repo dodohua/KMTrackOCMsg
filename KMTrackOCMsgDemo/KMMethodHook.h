@@ -8,8 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MethodHook : NSObject
+@interface KMMethodHook : NSObject
 
-+ (void)hookNotRecognizeSelector:(Class)cls;
++ (void)trackSelectorMsg:(Class)cls;
 
 @end

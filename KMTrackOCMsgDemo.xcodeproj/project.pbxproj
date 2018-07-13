@@ -13,7 +13,7 @@
 		1B59BC7A1D0014D8002F7353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B59BC781D0014D8002F7353 /* Main.storyboard */; };
 		1B59BC7C1D0014D8002F7353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B59BC7B1D0014D8002F7353 /* Assets.xcassets */; };
 		1B59BC7F1D0014D8002F7353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B59BC7D1D0014D8002F7353 /* LaunchScreen.storyboard */; };
-		1B59BC881D00171E002F7353 /* MethodHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B59BC871D00171E002F7353 /* MethodHook.m */; };
+		1B59BC881D00171E002F7353 /* KMMethodHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B59BC871D00171E002F7353 /* KMMethodHook.m */; };
 		1B59BC8B1D001849002F7353 /* TestObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B59BC8A1D001849002F7353 /* TestObject.m */; };
 		9F8DF14620F702F7001169FA /* NSInvocation+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF10020F702F7001169FA /* NSInvocation+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9F8DF14720F702F7001169FA /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF10220F702F7001169FA /* NSMethodSignature+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -68,8 +68,8 @@
 		1B59BC7B1D0014D8002F7353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B59BC7E1D0014D8002F7353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B59BC801D0014D8002F7353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1B59BC861D00171E002F7353 /* MethodHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodHook.h; sourceTree = "<group>"; };
-		1B59BC871D00171E002F7353 /* MethodHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodHook.m; sourceTree = "<group>"; };
+		1B59BC861D00171E002F7353 /* KMMethodHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMethodHook.h; sourceTree = "<group>"; };
+		1B59BC871D00171E002F7353 /* KMMethodHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMethodHook.m; sourceTree = "<group>"; };
 		1B59BC891D001849002F7353 /* TestObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestObject.h; sourceTree = "<group>"; };
 		1B59BC8A1D001849002F7353 /* TestObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestObject.m; sourceTree = "<group>"; };
 		9F8DF0FF20F702F7001169FA /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
@@ -200,8 +200,8 @@
 				9F8DF16C20F7628C001169FA /* libffi */,
 				9F8DF0FC20F702F7001169FA /* OCMock */,
 				9F9C6C1B20F5ADBE0066AAD9 /* kmHookBlock */,
-				1B59BC861D00171E002F7353 /* MethodHook.h */,
-				1B59BC871D00171E002F7353 /* MethodHook.m */,
+				1B59BC861D00171E002F7353 /* KMMethodHook.h */,
+				1B59BC871D00171E002F7353 /* KMMethodHook.m */,
 				9F8DF16920F73C8A001169FA /* BlockHook.h */,
 				9F8DF16A20F73C8A001169FA /* BlockHook.m */,
 				1B59BC721D0014D8002F7353 /* AppDelegate.h */,
@@ -428,7 +428,7 @@
 				9F8DF15E20F702F7001169FA /* OCMockObject.m in Sources */,
 				9F8DF16120F702F7001169FA /* OCMRecorder.m in Sources */,
 				9F8DF15820F702F7001169FA /* OCMInvocationStub.m in Sources */,
-				1B59BC881D00171E002F7353 /* MethodHook.m in Sources */,
+				1B59BC881D00171E002F7353 /* KMMethodHook.m in Sources */,
 				9F8DF15F20F702F7001169FA /* OCMPassByRefSetter.m in Sources */,
 				9F8DF15C20F702F7001169FA /* OCMObserverRecorder.m in Sources */,
 				9F8DF16720F702F7001169FA /* OCProtocolMockObject.m in Sources */,
