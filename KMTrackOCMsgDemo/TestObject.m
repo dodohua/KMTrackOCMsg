@@ -9,9 +9,10 @@
 #import "TestObject.h"
 
 @implementation TestObject
--(void)testA:(NSString *)str
+-(void)testA:(NSString *)str num:(int)num frame:(CGRect)frame dic:(NSDictionary *)dic  successCallback:(void(^)(NSString *successJson,int num))successblock
 {
     NSLog(@"testA:%@",str);
+    successblock(@"testString",123);
 }
 +(void)testB:(NSString *)str;
 {

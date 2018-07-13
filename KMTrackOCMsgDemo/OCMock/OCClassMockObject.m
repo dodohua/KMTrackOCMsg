@@ -28,7 +28,7 @@
 - (id)initWithClass:(Class)aClass
 {
     NSParameterAssert(aClass != nil);
-	[super init];
+	self = [super init];
 	mockedClass = aClass;
     [self prepareClassForClassMethodMocking];
 	return self;

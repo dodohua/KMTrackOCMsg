@@ -10,7 +10,7 @@
 #import <objc/runtime.h>
 #import <objc/message.h>
 #import <Foundation/Foundation.h>
-
+#import "NSInvocation+OCMAdditions.h"
 @implementation MethodHook
 
 void crashFunction(id self, SEL _cmd, ...) {
@@ -234,6 +234,9 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
     //    }
     Class cls = [anInvocation.target class];
     if ([anInvocation.target respondsToSelector:anInvocation.selector]) {
+        //打印参数
+        NSLog(@"value:%@",[anInvocation invocationDescription]);
+        
         NSString *selName = NSStringFromSelector(anInvocation.selector);
         selName = [NSString stringWithFormat:@"ORIG%@",selName];
         SEL orgSel = NSSelectorFromString(selName);
@@ -244,10 +247,11 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
         [anInvocation invokeWithTarget:anInvocation.target];
         overrideMethod(cls,NSStringFromSelector(anInvocation.selector) ,typeDescription);
         
-        __unsafe_unretained NSString * firstArgument = nil;
-        __unsafe_unretained NSString * secondArgument = nil;
-        [anInvocation getArgument:&firstArgument atIndex:2];
-        NSLog(@"value%@",firstArgument);
+        
+//        __unsafe_unretained NSString * firstArgument = nil;
+//        __unsafe_unretained NSString * secondArgument = nil;
+//        [anInvocation getArgument:&firstArgument atIndex:2];
+//        NSLog(@"value%@",firstArgument);
 //        https://github.com/erikdoe/ocmock/blob/master/Source/OCMock/NSInvocation%2BOCMAdditions.m
         return;
     }
@@ -316,6 +320,8 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
         class_replaceMethod(cls, anInvocation.selector, originalImp, typeDescription);
         [anInvocation invokeWithTarget:anInvocation.target];
     overrideMethod(cls,NSStringFromSelector(anInvocation.selector) ,typeDescription);
+        
+        NSLog(@"value:%@",[anInvocation invocationDescription]);
         return;
     }
     

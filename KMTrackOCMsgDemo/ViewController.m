@@ -67,7 +67,10 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     TestObject *testObject = [[TestObject alloc] init];
     [TestObject testB:@"qwe"];
-    [testObject testA:@"asd"];
+    
+    [testObject testA:@"asd" num:2 frame:CGRectMake(1, 2, 3, 4) dic:@{@"nihao":@"你好"} successCallback:^(NSString *successJson,int num) {
+        NSLog(@"block回调");
+    }];
     
 //    [testObject performSelector:@selector(notExistSelector:test:) withObject:@(2) withObject:@(4)];
 }

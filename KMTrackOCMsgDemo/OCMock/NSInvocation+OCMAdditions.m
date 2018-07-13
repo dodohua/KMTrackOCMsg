@@ -20,6 +20,9 @@
 #import "NSInvocation+OCMAdditions.h"
 #import "OCMFunctionsPrivate.h"
 #import "NSMethodSignature+OCMAdditions.h"
+#import "CTBlockDescription.h"
+
+#import "BlockHook.h"
 
 
 #if (TARGET_OS_OSX && (!defined(__MAC_10_10) || __MAC_OS_X_VERSION_MIN_REQUIRED < __MAC_10_10)) || \
@@ -373,9 +376,21 @@ static NSString *const OCMRetainedObjectArgumentsKey = @"OCMRetainedObjectArgume
 		return @"nil";
 	else if(![object isProxy] && [object isKindOfClass:[NSString class]])
 		return [NSString stringWithFormat:@"@\"%@\"", [object description]];
-	else
-		// The description cannot be nil, if it is then replace it
-		return [object description] ?: @"<nil description>";
+    else{
+        // The description cannot be nil, if it is then replace it
+        NSString *objectDesc = [object description];
+        if ([objectDesc containsString:@"Block"]) {
+            NSLog(@"打印block对象");
+            [object block_hookWithMode:BlockHookModeInstead usingBlock:^(id token){
+                // BHToken has to be the first arg.
+                [token printArgsValue];
+            }];
+//            NSLog(@"token:%@",token.args);
+        }
+        return objectDesc ?: @"<nil description>";
+    }
+		
+    
 }
 
 - (NSString *)boolDescriptionAtIndex:(NSInteger)anInt

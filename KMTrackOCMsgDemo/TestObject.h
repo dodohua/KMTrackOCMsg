@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface TestObject : NSObject
--(void)testA:(NSString *)str;
+-(void)testA:(NSString *)str num:(int)num frame:(CGRect)frame dic:(NSDictionary *)dic  successCallback:(void(^)(NSString *successJson,int num))successblock;
 +(void)testB:(NSString *)str;
 @end
