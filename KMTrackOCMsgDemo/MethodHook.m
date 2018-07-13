@@ -191,14 +191,9 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
     
     [MethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:YES];
     
-    
-    
 }
 - (NSMethodSignature *)methodSignatureForSelectorMySelf:(SEL)aSelector {
-    //    NSString *clsString = NSStringFromClass([self class]);
-    //    if ([clsString rangeOfString:@"MF"].location == NSNotFound) {
-    //        return [self methodSignatureForSelectorOriginal:aSelector];
-    //    }
+    
     NSString *sel = NSStringFromSelector(aSelector);
     NSLog(@"调用了sel:%@",sel);
     if ([self respondsToSelector:aSelector]) {
@@ -216,25 +211,10 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
 }
 
 - (void)forwardInvocationMySelf:(NSInvocation *)anInvocation {
-    //    if ([anInvocation.target respondsToSelector:anInvocation.selector]) {
-    //        NSString *selName = NSStringFromSelector(anInvocation.selector);
-    //        selName = [NSString stringWithFormat:@"ORIG%@",selName];
-    //        SEL orgSel = NSSelectorFromString(selName);
-    //        NSMethodSignature *methodSignature = [self methodSignatureForSelectorOriginal:orgSel];
-    //        if (!methodSignature) {
-    //            NSLog(@"");
-    //            return;
-    //        }
-    //        NSInvocation *forwardInv= [NSInvocation invocationWithMethodSignature:methodSignature];
-    //        [forwardInv setTarget:self];
-    //        [forwardInv setSelector:orgSel];
-    //        [forwardInv setArgument:&anInvocation atIndex:2];
-    //        [forwardInv invokeWithTarget:forwardInv.target];
-    //
-    //    }
+    
     Class cls = [anInvocation.target class];
     if ([anInvocation.target respondsToSelector:anInvocation.selector]) {
-        //打印参数
+        //打印参数值
         NSLog(@"value:%@",[anInvocation invocationDescription]);
         
         NSString *selName = NSStringFromSelector(anInvocation.selector);
@@ -247,12 +227,6 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
         [anInvocation invokeWithTarget:anInvocation.target];
         overrideMethod(cls,NSStringFromSelector(anInvocation.selector) ,typeDescription);
         
-        
-//        __unsafe_unretained NSString * firstArgument = nil;
-//        __unsafe_unretained NSString * secondArgument = nil;
-//        [anInvocation getArgument:&firstArgument atIndex:2];
-//        NSLog(@"value%@",firstArgument);
-//        https://github.com/erikdoe/ocmock/blob/master/Source/OCMock/NSInvocation%2BOCMAdditions.m
         return;
     }
     
@@ -271,10 +245,7 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
     
 }
 + (NSMethodSignature *)methodSignatureForSelectorMySelf:(SEL)aSelector {
-//    NSString *clsString = NSStringFromClass([self class]);
-//    if ([clsString rangeOfString:@"MF"].location == NSNotFound) {
-//        return [self methodSignatureForSelectorOriginal:aSelector];
-//    }
+
     NSString *sel = NSStringFromSelector(aSelector);
     NSLog(@"调用了class sel:%@",sel);
     if ([self respondsToSelector:aSelector]) {
@@ -292,24 +263,12 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
 }
 
 + (void)forwardInvocationMySelf:(NSInvocation *)anInvocation {
-//    if ([anInvocation.target respondsToSelector:anInvocation.selector]) {
-//        NSString *selName = NSStringFromSelector(anInvocation.selector);
-//        selName = [NSString stringWithFormat:@"ORIG%@",selName];
-//        SEL orgSel = NSSelectorFromString(selName);
-//        NSMethodSignature *methodSignature = [self methodSignatureForSelectorOriginal:orgSel];
-//        if (!methodSignature) {
-//            NSLog(@"");
-//            return;
-//        }
-//        NSInvocation *forwardInv= [NSInvocation invocationWithMethodSignature:methodSignature];
-//        [forwardInv setTarget:self];
-//        [forwardInv setSelector:orgSel];
-//        [forwardInv setArgument:&anInvocation atIndex:2];
-//        [forwardInv invokeWithTarget:forwardInv.target];
-//        
-//    }
+
     Class cls = [anInvocation.target class];
     if ([anInvocation.target respondsToSelector:anInvocation.selector]) {
+        //打印参数值
+        NSLog(@"value:%@",[anInvocation invocationDescription]);
+        
         cls = object_getClass(cls);
         NSString *selName = NSStringFromSelector(anInvocation.selector);
         selName = [NSString stringWithFormat:@"ORIG%@",selName];
@@ -321,7 +280,6 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
         [anInvocation invokeWithTarget:anInvocation.target];
     overrideMethod(cls,NSStringFromSelector(anInvocation.selector) ,typeDescription);
         
-        NSLog(@"value:%@",[anInvocation invocationDescription]);
         return;
     }
     
