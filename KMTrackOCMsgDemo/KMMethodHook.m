@@ -278,7 +278,7 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
         const char *typeDescription = (char *)method_getTypeEncoding(method);
         class_replaceMethod(cls, anInvocation.selector, originalImp, typeDescription);
         [anInvocation invokeWithTarget:anInvocation.target];
-    overrideMethod(cls,NSStringFromSelector(anInvocation.selector) ,typeDescription);
+        overrideMethod(cls,NSStringFromSelector(anInvocation.selector) ,typeDescription);
         
         return;
     }

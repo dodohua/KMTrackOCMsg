@@ -20,7 +20,7 @@
 #import "NSInvocation+OCMAdditions.h"
 #import "OCMFunctionsPrivate.h"
 #import "NSMethodSignature+OCMAdditions.h"
-#import "CTBlockDescription.h"
+
 
 #import "BlockHook.h"
 

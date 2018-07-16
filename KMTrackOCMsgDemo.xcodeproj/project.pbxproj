@@ -51,8 +51,6 @@
 		9F8DF16720F702F7001169FA /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF14420F702F7001169FA /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9F8DF16B20F73C8A001169FA /* BlockHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF16A20F73C8A001169FA /* BlockHook.m */; };
 		9F8DF17920F7628C001169FA /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8DF17820F7628C001169FA /* libffi.a */; };
-		9F9C6C2420F5ADBE0066AAD9 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C1D20F5ADBE0066AAD9 /* CTBlockDescription.m */; };
-		9F9C6C2520F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C1F20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m */; };
 		9F9C6C2720F5ADBE0066AAD9 /* NSObject+kmHookBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -155,10 +153,6 @@
 		9F8DF17620F7628C001169FA /* ffitarget_i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
 		9F8DF17720F7628C001169FA /* ffitarget_x86_64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_x86_64.h; sourceTree = "<group>"; };
 		9F8DF17820F7628C001169FA /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libffi.a; sourceTree = "<group>"; };
-		9F9C6C1C20F5ADBE0066AAD9 /* CTBlockDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTBlockDescription.h; sourceTree = "<group>"; };
-		9F9C6C1D20F5ADBE0066AAD9 /* CTBlockDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBlockDescription.m; sourceTree = "<group>"; };
-		9F9C6C1E20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTObjectiveCRuntimeAdditions.h; sourceTree = "<group>"; };
-		9F9C6C1F20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTObjectiveCRuntimeAdditions.m; sourceTree = "<group>"; };
 		9F9C6C2220F5ADBE0066AAD9 /* NSObject+kmHookBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+kmHookBlock.h"; sourceTree = "<group>"; };
 		9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+kmHookBlock.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -323,10 +317,6 @@
 		9F9C6C1B20F5ADBE0066AAD9 /* kmHookBlock */ = {
 			isa = PBXGroup;
 			children = (
-				9F9C6C1C20F5ADBE0066AAD9 /* CTBlockDescription.h */,
-				9F9C6C1D20F5ADBE0066AAD9 /* CTBlockDescription.m */,
-				9F9C6C1E20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.h */,
-				9F9C6C1F20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m */,
 				9F9C6C2220F5ADBE0066AAD9 /* NSObject+kmHookBlock.h */,
 				9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */,
 			);
@@ -419,7 +409,6 @@
 				9F8DF15A20F702F7001169FA /* OCMMacroState.m in Sources */,
 				9F8DF15920F702F7001169FA /* OCMLocation.m in Sources */,
 				9F8DF16320F702F7001169FA /* OCMStubRecorder.m in Sources */,
-				9F9C6C2420F5ADBE0066AAD9 /* CTBlockDescription.m in Sources */,
 				9F8DF15E20F702F7001169FA /* OCMockObject.m in Sources */,
 				9F8DF16120F702F7001169FA /* OCMRecorder.m in Sources */,
 				9F8DF15820F702F7001169FA /* OCMInvocationStub.m in Sources */,
@@ -441,7 +430,6 @@
 				9F8DF14C20F702F7001169FA /* OCMArg.m in Sources */,
 				9F8DF16620F702F7001169FA /* OCPartialMockObject.m in Sources */,
 				9F8DF15720F702F7001169FA /* OCMInvocationMatcher.m in Sources */,
-				9F9C6C2520F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m in Sources */,
 				9F8DF15020F702F7001169FA /* OCMBoxedReturnValueProvider.m in Sources */,
 				9F8DF16220F702F7001169FA /* OCMReturnValueProvider.m in Sources */,
 				9F8DF16520F702F7001169FA /* OCObserverMockObject.m in Sources */,
