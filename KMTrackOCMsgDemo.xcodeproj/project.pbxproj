@@ -53,7 +53,6 @@
 		9F8DF17920F7628C001169FA /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8DF17820F7628C001169FA /* libffi.a */; };
 		9F9C6C2420F5ADBE0066AAD9 /* CTBlockDescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C1D20F5ADBE0066AAD9 /* CTBlockDescription.m */; };
 		9F9C6C2520F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C1F20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m */; };
-		9F9C6C2620F5ADBE0066AAD9 /* NSObject+hook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C2120F5ADBE0066AAD9 /* NSObject+hook.m */; };
 		9F9C6C2720F5ADBE0066AAD9 /* NSObject+kmHookBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -160,8 +159,6 @@
 		9F9C6C1D20F5ADBE0066AAD9 /* CTBlockDescription.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTBlockDescription.m; sourceTree = "<group>"; };
 		9F9C6C1E20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTObjectiveCRuntimeAdditions.h; sourceTree = "<group>"; };
 		9F9C6C1F20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTObjectiveCRuntimeAdditions.m; sourceTree = "<group>"; };
-		9F9C6C2020F5ADBE0066AAD9 /* NSObject+hook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+hook.h"; sourceTree = "<group>"; };
-		9F9C6C2120F5ADBE0066AAD9 /* NSObject+hook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+hook.m"; sourceTree = "<group>"; };
 		9F9C6C2220F5ADBE0066AAD9 /* NSObject+kmHookBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+kmHookBlock.h"; sourceTree = "<group>"; };
 		9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+kmHookBlock.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -330,8 +327,6 @@
 				9F9C6C1D20F5ADBE0066AAD9 /* CTBlockDescription.m */,
 				9F9C6C1E20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.h */,
 				9F9C6C1F20F5ADBE0066AAD9 /* CTObjectiveCRuntimeAdditions.m */,
-				9F9C6C2020F5ADBE0066AAD9 /* NSObject+hook.h */,
-				9F9C6C2120F5ADBE0066AAD9 /* NSObject+hook.m */,
 				9F9C6C2220F5ADBE0066AAD9 /* NSObject+kmHookBlock.h */,
 				9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */,
 			);
@@ -450,7 +445,6 @@
 				9F8DF15020F702F7001169FA /* OCMBoxedReturnValueProvider.m in Sources */,
 				9F8DF16220F702F7001169FA /* OCMReturnValueProvider.m in Sources */,
 				9F8DF16520F702F7001169FA /* OCObserverMockObject.m in Sources */,
-				9F9C6C2620F5ADBE0066AAD9 /* NSObject+hook.m in Sources */,
 				9F8DF15120F702F7001169FA /* OCMConstraint.m in Sources */,
 				1B59BC711D0014D8002F7353 /* main.m in Sources */,
 			);
