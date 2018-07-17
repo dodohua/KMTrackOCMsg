@@ -51,6 +51,9 @@
 		9F8DF16720F702F7001169FA /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF14420F702F7001169FA /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		9F8DF16B20F73C8A001169FA /* BlockHook.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F8DF16A20F73C8A001169FA /* BlockHook.m */; };
 		9F8DF17920F7628C001169FA /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8DF17820F7628C001169FA /* libffi.a */; };
+		9F90EAF520FCAD2A001B3206 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F90EAF320FCAD2A001B3206 /* AVKit.framework */; };
+		9F90EAF620FCAD2A001B3206 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F90EAF420FCAD2A001B3206 /* AVFoundation.framework */; };
+		9F90EAF820FCAD37001B3206 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F90EAF720FCAD37001B3206 /* WebKit.framework */; };
 		9F9C6C2720F5ADBE0066AAD9 /* NSObject+kmHookBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +156,9 @@
 		9F8DF17620F7628C001169FA /* ffitarget_i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
 		9F8DF17720F7628C001169FA /* ffitarget_x86_64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_x86_64.h; sourceTree = "<group>"; };
 		9F8DF17820F7628C001169FA /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libffi.a; sourceTree = "<group>"; };
+		9F90EAF320FCAD2A001B3206 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		9F90EAF420FCAD2A001B3206 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9F90EAF720FCAD37001B3206 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		9F9C6C2220F5ADBE0066AAD9 /* NSObject+kmHookBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+kmHookBlock.h"; sourceTree = "<group>"; };
 		9F9C6C2320F5ADBE0066AAD9 /* NSObject+kmHookBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+kmHookBlock.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F90EAF820FCAD37001B3206 /* WebKit.framework in Frameworks */,
+				9F90EAF520FCAD2A001B3206 /* AVKit.framework in Frameworks */,
+				9F90EAF620FCAD2A001B3206 /* AVFoundation.framework in Frameworks */,
 				9F8DF17920F7628C001169FA /* libffi.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -174,6 +183,7 @@
 			children = (
 				1B59BC6E1D0014D8002F7353 /* KMTrackOCMsgDemo */,
 				1B59BC6D1D0014D8002F7353 /* Products */,
+				9F90EAF220FCAD2A001B3206 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,6 +322,16 @@
 				9F8DF17820F7628C001169FA /* libffi.a */,
 			);
 			path = libffi;
+			sourceTree = "<group>";
+		};
+		9F90EAF220FCAD2A001B3206 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F90EAF720FCAD37001B3206 /* WebKit.framework */,
+				9F90EAF420FCAD2A001B3206 /* AVFoundation.framework */,
+				9F90EAF320FCAD2A001B3206 /* AVKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9F9C6C1B20F5ADBE0066AAD9 /* kmHookBlock */ = {
@@ -548,6 +568,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 74YUQF4FAH;
 				INFOPLIST_FILE = KMTrackOCMsgDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -565,6 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 74YUQF4FAH;
 				INFOPLIST_FILE = KMTrackOCMsgDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

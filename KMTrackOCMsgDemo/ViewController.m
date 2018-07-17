@@ -15,7 +15,7 @@
 
 #import "NSObject+kmHookBlock.h"
 
-@interface ViewController ()
+@interface ViewController ()<WKNavigationDelegate>
 @property (nonatomic,strong) WKWebView *webview;
 @end
 
@@ -24,8 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [MethodHook hookNotRecognizeSelector:NSClassFromString(@"UIView")];
-    [KMMethodHook trackSelectorMsg:[TestObject class]];
+//    [KMMethodHook trackSelectorMsg:NSClassFromString(@"NSURL")];
+    [KMMethodHook trackSelectorMsg:[AVPlayerViewController class]];
     
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     // 允许视频播放
@@ -36,11 +36,12 @@
     configuration.allowsPictureInPictureMediaPlayback = NO;
     // 允许与网页交互，选择视图
     configuration.selectionGranularity = YES;
-//    self.webview = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:configuration];
-////    self.webview = [[UIWebView alloc]initWithFrame:self.view.bounds];
-//    [self.view addSubview:self.webview];
-//    NSURL *url = [NSURL URLWithString:@"http://m.iqiyi.com/"];
-//    [self.webview loadRequest:[NSURLRequest requestWithURL:url]];
+    self.webview = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:configuration];
+//    self.webview = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview:self.webview];
+    NSURL *url = [NSURL URLWithString:@"http://m.iqiyi.com/"];
+    [self.webview loadRequest:[NSURLRequest requestWithURL:url]];
+    self.webview.navigationDelegate = self;
     
 //    [NSURL hookSelectorWithBlock:PAIR_LIST {
 //        @selector(fileURLWithPath:),
@@ -61,7 +62,23 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-//    [MethodHook hookNotRecognizeSelector:NSClassFromString(@"AVFullScreenViewController")];
+
+    
+//    NSLog(@"NSClassFromString%@",NSClassFromString(@"WKURLSchemeHandler"));
+//    [KMMethodHook trackSelectorMsg:NSClassFromString(@"WKURLSchemeHandler")];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    NSLog(@"viewWillDisappear");
+}
+
+
+
+- (void)webView:(WKWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation
+{
+    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

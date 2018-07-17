@@ -318,11 +318,12 @@ static NSString *const OCMRetainedObjectArgumentsKey = @"OCMRetainedObjectArgume
 
 - (NSString *)invocationDescription
 {
+    [self retainArguments];//非arc环境下要执行retain一下，防止block内存被释放
 	NSMethodSignature *methodSignature = [self methodSignature];
 	NSUInteger numberOfArgs = [methodSignature numberOfArguments];
 	
 	if (numberOfArgs == 2)
-		return NSStringFromSelector([self selector]);
+        return [NSString stringWithFormat:@"%@:not args",NSStringFromSelector([self selector])];
 	
 	NSArray *selectorParts = [NSStringFromSelector([self selector]) componentsSeparatedByString:@":"];
 	NSMutableString *description = [[NSMutableString alloc] init];
@@ -379,13 +380,24 @@ static NSString *const OCMRetainedObjectArgumentsKey = @"OCMRetainedObjectArgume
     else{
         // The description cannot be nil, if it is then replace it
         NSString *objectDesc = [object description];
-        if ([objectDesc containsString:@"Block"]) {
-            NSLog(@"打印block对象");
+        if ([object isKindOfClass:NSClassFromString(@"NSBlock")]) {
+            
             [object block_hookWithMode:BlockHookModeInstead usingBlock:^(id token){
                 // BHToken has to be the first arg.
+                
                 [token printArgsValue];
             }];
-//            NSLog(@"token:%@",token.args);
+//            NSLog(@"打印block对象");
+//            if ([objectDesc containsString:@"NSStackBlock"]) {
+//                NSMethodSignature *originalBlockSignature = [NSMethodSignature signatureForBlock:object];
+//                NSLog(@"NSStackBlock:%@:%s",object,[originalBlockSignature fullObjCTypes]);
+//            }else
+//            {
+//                [object block_hookWithMode:BlockHookModeInstead usingBlock:^(id token){
+//                    // BHToken has to be the first arg.
+//                    [token printArgsValue];
+//                }];
+//            }
         }
         return objectDesc ?: @"<nil description>";
     }

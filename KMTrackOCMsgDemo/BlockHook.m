@@ -495,7 +495,10 @@ return structType; \
 }
 - (BOOL)invokeHookBlockWithArgs:(void **)args
 {
-    if (!self.block || !self.hookBlock) {
+    if (!self.block) {
+        return NO;
+    }
+    if (!self.hookBlock) {
         return NO;
     }
     NSMethodSignature *hookBlockSignature = [NSMethodSignature signatureWithObjCTypes:BHBlockTypeEncodeString(self.hookBlock)];
@@ -554,7 +557,7 @@ return structType; \
     }
     BHToken *token = [[BHToken alloc] initWithBlock:self];
     token.mode = mode;
-    token.hookBlock = block;
+    token.hookBlock = block;;
     return token;
 }
 

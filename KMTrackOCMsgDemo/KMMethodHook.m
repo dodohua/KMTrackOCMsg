@@ -77,7 +77,7 @@ void crashFunction(id self, SEL _cmd, ...) {
         NSString *preSelector = [selector lowercaseString];
         preSelector = [preSelector stringByTrimmingCharactersInSet:
          [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([preSelector hasPrefix:@"forwardingtargetforselector"]||[preSelector hasPrefix:@"methodsignatureforselector"]||[preSelector hasPrefix:@"forwardinvocation"]||[preSelector containsString:@"retain"]||[preSelector containsString:@"release"]||[preSelector containsString:@"autorelease"]||[preSelector hasPrefix:@".cxx_"]||[preSelector containsString:@"deallocat"]||[preSelector hasPrefix:@"ORIG"]||[preSelector hasPrefix:@"dealloc"]||preSelector.length<=0) {
+        if ([preSelector hasPrefix:@"forwardingtargetforselector"]||[preSelector hasPrefix:@"methodsignatureforselector"]||[preSelector hasPrefix:@"forwardinvocation"]||[preSelector containsString:@"retain"]||[preSelector containsString:@"release"]||[preSelector containsString:@"autorelease"]||[preSelector hasPrefix:@".cxx_"]||[preSelector containsString:@"deallocat"]||[preSelector hasPrefix:@"ORIG"]||[preSelector hasPrefix:@"dealloc"]||[preSelector hasPrefix:@"initialize"]||preSelector.length<=0) {
             continue;
         }
         //忽略set的方法,避免影响kvo
@@ -98,7 +98,7 @@ void crashFunction(id self, SEL _cmd, ...) {
         NSString *preSelector = [selector lowercaseString];
         preSelector = [preSelector stringByTrimmingCharactersInSet:
                        [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([preSelector hasPrefix:@"forwardingtargetforselector"]||[preSelector hasPrefix:@"methodsignatureforselector"]||[preSelector hasPrefix:@"forwardinvocation"]||preSelector.length<=0) {
+        if ([preSelector hasPrefix:@"forwardingtargetforselector"]||[preSelector hasPrefix:@"methodsignatureforselector"]||[preSelector hasPrefix:@"forwardinvocation"]||[preSelector hasPrefix:@"initialize"]||preSelector.length<=0) {
             continue;
         }
         overrideMethod(class,selector,NULL);
@@ -183,6 +183,10 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
 }
 
 + (void)trackSelectorMsg:(Class)cls {
+    if (cls == nil) {
+        NSLog(@"class is nil");
+        return;
+    }
     [KMMethodHook replaceAllSelector:cls];
     [KMMethodHook hookMethedClass:cls hookSEL:@selector(methodSignatureForSelector:) originalSEL:@selector(methodSignatureForSelectorOriginal:) myselfSEL:@selector(methodSignatureForSelectorMySelf:) isClassMethod:NO];
     
@@ -215,6 +219,7 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
     Class cls = [anInvocation.target class];
     if ([anInvocation.target respondsToSelector:anInvocation.selector]) {
         //打印参数值
+        
         NSLog(@"value:%@",[anInvocation invocationDescription]);
         
         NSString *selName = NSStringFromSelector(anInvocation.selector);
