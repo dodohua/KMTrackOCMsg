@@ -4,7 +4,7 @@ support class method and instance method
 使用OC写的黑盒追踪基于NSObject的方法调用   
 ## 🌟 Features
 - [x] 追踪一个class调用方法.
-- [x] 支持类发放和实例方法.
+- [x] 支持类方法和实例方法.
 - [x] 支持block.
 - [x] 支持方法的value值print和block调用的arg值打印.
 ## 🌟 Notice
