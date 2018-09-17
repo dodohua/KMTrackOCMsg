@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import <KMTrackOCMsg/KMMethodHook.h>
+#import <KMTrackOCMsg/BlockHook.h>
 #import "TestObject.h"
 #import <WebKit/WebKit.h>
 #import <AVKit/AVKit.h>
@@ -24,24 +25,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [KMMethodHook trackSelectorMsg:NSClassFromString(@"NSURL")];
+    [KMMethodHook trackSelectorMsg:NSClassFromString(@"TestObject")];
 //    [KMMethodHook trackSelectorMsg:[AVPlayerViewController class]];
     
-    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
-    // 允许视频播放
-    configuration.allowsAirPlayForMediaPlayback = NO;
-    // 允许在线播放
-    configuration.allowsInlineMediaPlayback = NO;
-    // 允许图片播放
-    configuration.allowsPictureInPictureMediaPlayback = NO;
-    // 允许与网页交互，选择视图
-    configuration.selectionGranularity = YES;
-    self.webview = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:configuration];
-//    self.webview = [[UIWebView alloc]initWithFrame:self.view.bounds];
-    [self.view addSubview:self.webview];
-    NSURL *url = [NSURL URLWithString:@"http://m.iqiyi.com/"];
-    [self.webview loadRequest:[NSURLRequest requestWithURL:url]];
-    self.webview.navigationDelegate = self;
+//    WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
+//    // 允许视频播放
+//    configuration.allowsAirPlayForMediaPlayback = NO;
+//    // 允许在线播放
+//    configuration.allowsInlineMediaPlayback = NO;
+//    // 允许图片播放
+//    configuration.allowsPictureInPictureMediaPlayback = NO;
+//    // 允许与网页交互，选择视图
+//    configuration.selectionGranularity = YES;
+//    self.webview = [[WKWebView alloc]initWithFrame:self.view.bounds configuration:configuration];
+////    self.webview = [[UIWebView alloc]initWithFrame:self.view.bounds];
+//    [self.view addSubview:self.webview];
+//    NSURL *url = [NSURL URLWithString:@"http://m.iqiyi.com/"];
+//    [self.webview loadRequest:[NSURLRequest requestWithURL:url]];
+//    self.webview.navigationDelegate = self;
     
 //    [NSURL hookSelectorWithBlock:PAIR_LIST {
 //        @selector(fileURLWithPath:),

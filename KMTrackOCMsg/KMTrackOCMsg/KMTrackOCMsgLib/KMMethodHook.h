@@ -10,6 +10,6 @@
 
 @interface KMMethodHook : NSObject
 
-+ (void)trackSelectorMsg:(Class)cls;//很容易导致系统崩溃，不建议使用
++ (void)trackSelectorMsg:(Class)cls;//跟踪所有的方法
 +(void)trackSelectorMsg:(Class)cls selectors:(NSArray *)selectors;
 @end

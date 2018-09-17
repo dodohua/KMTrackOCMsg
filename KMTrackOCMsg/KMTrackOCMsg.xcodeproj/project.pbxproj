@@ -646,6 +646,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/KMTrackOCMsg/KMTrackOCMsgLib/libffi",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.KMTrackOCMsg;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -669,6 +670,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/KMTrackOCMsg/KMTrackOCMsgLib/libffi",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allen.KMTrackOCMsg;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
