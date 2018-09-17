@@ -141,10 +141,11 @@ static void _hunt_blocks_for_image(const struct mach_header *header, intptr_t sl
     void *_originInvoke;
     void *_replacementInvoke;
     ffi_closure *_closure;
-    
+    id _block;
+    NSString *orgBlockName;
+    NSMethodSignature *originalBlockSignature;
 }
 @property (nonatomic) NSMutableArray *allocations;
-@property (nonatomic, weak) id block;
 @property (nonatomic) NSUInteger numberOfArguments;
 @property (nonatomic) id hookBlock;
 @property (nonatomic, nullable, readwrite) NSString *mangleName;
@@ -160,7 +161,9 @@ static void _hunt_blocks_for_image(const struct mach_header *header, intptr_t sl
     if((self = [self init]))
     {
         _allocations = [[NSMutableArray alloc] init];
-        _block = block;
+        _block = block;//如果是nsstackblock类型，后面调用的时候内存会自动释放掉，会导致调用崩溃
+        orgBlockName = [_block description];
+        originalBlockSignature = [NSMethodSignature signatureWithObjCTypes:BHBlockTypeEncodeString(_block)];
         _closure = ffi_closure_alloc(sizeof(ffi_closure), &_replacementInvoke);
         _numberOfArguments = [self _prepCIF:&_cif withEncodeString:BHBlockTypeEncodeString(_block)];
         BHDealloc *bhDealloc = [BHDealloc new];
@@ -190,8 +193,8 @@ static void _hunt_blocks_for_image(const struct mach_header *header, intptr_t sl
 {
     [self setBlockDeadCallback:nil];
     if (_originInvoke) {
-        if (self.block) {
-            ((__bridge struct _BHBlock *)self.block)->invoke = _originInvoke;
+        if (_block) {
+            ((__bridge struct _BHBlock *)_block)->invoke = _originInvoke;
         }
 #if DEBUG
         _originInvoke = NULL;
@@ -219,7 +222,7 @@ static void _hunt_blocks_for_image(const struct mach_header *header, intptr_t sl
 
 - (void)setBlockDeadCallback:(BHDeadBlock)deadBlock
 {
-    BHDealloc *bhDealloc = objc_getAssociatedObject(self.block, NSSelectorFromString([NSString stringWithFormat:@"%p", self]));
+    BHDealloc *bhDealloc = objc_getAssociatedObject(_block, NSSelectorFromString([NSString stringWithFormat:@"%p", self]));
     bhDealloc.deadBlock = deadBlock;
 }
 
@@ -453,16 +456,16 @@ return structType; \
         abort();
     }
     // exchange invoke func imp
-    _originInvoke = ((__bridge struct _BHBlock *)self.block)->invoke;
-    ((__bridge struct _BHBlock *)self.block)->invoke = _replacementInvoke;
+    _originInvoke = ((__bridge struct _BHBlock *)_block)->invoke;
+    ((__bridge struct _BHBlock *)_block)->invoke = _replacementInvoke;
 }
 -(void)printArgsValue
 {
-    if (!self.block || !self.hookBlock) {
+    if (!_block || !self.hookBlock) {
         return;
     }
     
-    NSMethodSignature *originalBlockSignature = [NSMethodSignature signatureWithObjCTypes:BHBlockTypeEncodeString(self.block)];
+    
     NSInvocation *blockInvocation = [NSInvocation invocationWithMethodSignature:originalBlockSignature];
     // block本身有一个隐藏参数，就是block本身
     
@@ -485,7 +488,7 @@ return structType; \
         
         
     }
-    NSLog(@"block:%@ sel:%@ argValue:%@",self.block,[originalBlockSignature fullTypeString],argValue);
+    NSLog(@"block:%@ sel:%@ argValue:%@",orgBlockName,[originalBlockSignature fullTypeString],argValue);
     
     
     
@@ -495,14 +498,20 @@ return structType; \
 }
 - (BOOL)invokeHookBlockWithArgs:(void **)args
 {
-    if (!self.block) {
+    if (!_block) {
         return NO;
     }
     if (!self.hookBlock) {
         return NO;
     }
     NSMethodSignature *hookBlockSignature = [NSMethodSignature signatureWithObjCTypes:BHBlockTypeEncodeString(self.hookBlock)];
-    NSMethodSignature *originalBlockSignature = [NSMethodSignature signatureWithObjCTypes:BHBlockTypeEncodeString(self.block)];
+    @try{
+        
+    }@catch (NSException *ex){
+        
+    }
+    
+    
     NSInvocation *blockInvocation = [NSInvocation invocationWithMethodSignature:hookBlockSignature];
     
     // origin block invoke func arguments: block(self), ...
