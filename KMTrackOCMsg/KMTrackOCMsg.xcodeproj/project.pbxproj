@@ -1,0 +1,703 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C2079EF7214A59910089C58E /* KMTrackOCMsg.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079EF5214A59910089C58E /* KMTrackOCMsg.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2079F56214A59F30089C58E /* KMMethodHook.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079EFE214A59F30089C58E /* KMMethodHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2079F57214A59F30089C58E /* KMMethodHook.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079EFF214A59F30089C58E /* KMMethodHook.m */; };
+		C2079F58214A59F30089C58E /* ffi.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F01214A59F30089C58E /* ffi.h */; };
+		C2079F59214A59F30089C58E /* ffi_arm.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F02214A59F30089C58E /* ffi_arm.h */; };
+		C2079F5A214A59F30089C58E /* ffi_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F03214A59F30089C58E /* ffi_arm64.h */; };
+		C2079F5B214A59F30089C58E /* ffi_common.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F04214A59F30089C58E /* ffi_common.h */; };
+		C2079F5C214A59F30089C58E /* ffi_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F05214A59F30089C58E /* ffi_i386.h */; };
+		C2079F5D214A59F30089C58E /* ffi_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F06214A59F30089C58E /* ffi_x86_64.h */; };
+		C2079F5E214A59F30089C58E /* ffitarget.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F07214A59F30089C58E /* ffitarget.h */; };
+		C2079F5F214A59F30089C58E /* ffitarget_arm.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F08214A59F30089C58E /* ffitarget_arm.h */; };
+		C2079F60214A59F30089C58E /* ffitarget_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F09214A59F30089C58E /* ffitarget_arm64.h */; };
+		C2079F61214A59F30089C58E /* ffitarget_i386.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F0A214A59F30089C58E /* ffitarget_i386.h */; };
+		C2079F62214A59F30089C58E /* ffitarget_x86_64.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F0B214A59F30089C58E /* ffitarget_x86_64.h */; };
+		C2079F63214A59F30089C58E /* libffi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C2079F0C214A59F30089C58E /* libffi.a */; };
+		C2079F64214A59F30089C58E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2079F0E214A59F30089C58E /* InfoPlist.strings */; };
+		C2079F65214A59F30089C58E /* NSInvocation+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F10214A59F30089C58E /* NSInvocation+OCMAdditions.h */; };
+		C2079F66214A59F30089C58E /* NSInvocation+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F11214A59F30089C58E /* NSInvocation+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F67214A59F30089C58E /* NSMethodSignature+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F12214A59F30089C58E /* NSMethodSignature+OCMAdditions.h */; };
+		C2079F68214A59F30089C58E /* NSMethodSignature+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F13214A59F30089C58E /* NSMethodSignature+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F69214A59F30089C58E /* NSNotificationCenter+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F14214A59F30089C58E /* NSNotificationCenter+OCMAdditions.h */; };
+		C2079F6A214A59F30089C58E /* NSNotificationCenter+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F15214A59F30089C58E /* NSNotificationCenter+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F6B214A59F30089C58E /* NSObject+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F16214A59F30089C58E /* NSObject+OCMAdditions.h */; };
+		C2079F6C214A59F30089C58E /* NSObject+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F17214A59F30089C58E /* NSObject+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F6D214A59F30089C58E /* NSValue+OCMAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F18214A59F30089C58E /* NSValue+OCMAdditions.h */; };
+		C2079F6E214A59F30089C58E /* NSValue+OCMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F19214A59F30089C58E /* NSValue+OCMAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F6F214A59F30089C58E /* OCClassMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F1A214A59F30089C58E /* OCClassMockObject.h */; };
+		C2079F70214A59F30089C58E /* OCClassMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F1B214A59F30089C58E /* OCClassMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F71214A59F30089C58E /* OCMArg.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F1C214A59F30089C58E /* OCMArg.h */; };
+		C2079F72214A59F30089C58E /* OCMArg.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F1D214A59F30089C58E /* OCMArg.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F73214A59F30089C58E /* OCMArgAction.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F1E214A59F30089C58E /* OCMArgAction.h */; };
+		C2079F74214A59F30089C58E /* OCMArgAction.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F1F214A59F30089C58E /* OCMArgAction.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F75214A59F30089C58E /* OCMBlockArgCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F20214A59F30089C58E /* OCMBlockArgCaller.h */; };
+		C2079F76214A59F30089C58E /* OCMBlockArgCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F21214A59F30089C58E /* OCMBlockArgCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F77214A59F30089C58E /* OCMBlockCaller.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F22214A59F30089C58E /* OCMBlockCaller.h */; };
+		C2079F78214A59F30089C58E /* OCMBlockCaller.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F23214A59F30089C58E /* OCMBlockCaller.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F79214A59F30089C58E /* OCMBoxedReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F24214A59F30089C58E /* OCMBoxedReturnValueProvider.h */; };
+		C2079F7A214A59F30089C58E /* OCMBoxedReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F25214A59F30089C58E /* OCMBoxedReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F7B214A59F30089C58E /* OCMConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F26214A59F30089C58E /* OCMConstraint.h */; };
+		C2079F7C214A59F30089C58E /* OCMConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F27214A59F30089C58E /* OCMConstraint.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F7D214A59F30089C58E /* OCMExceptionReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F28214A59F30089C58E /* OCMExceptionReturnValueProvider.h */; };
+		C2079F7E214A59F30089C58E /* OCMExceptionReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F29214A59F30089C58E /* OCMExceptionReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F7F214A59F30089C58E /* OCMExpectationRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F2A214A59F30089C58E /* OCMExpectationRecorder.h */; };
+		C2079F80214A59F30089C58E /* OCMExpectationRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F2B214A59F30089C58E /* OCMExpectationRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F81214A59F30089C58E /* OCMFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F2C214A59F30089C58E /* OCMFunctions.h */; };
+		C2079F82214A59F30089C58E /* OCMFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F2D214A59F30089C58E /* OCMFunctions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F83214A59F30089C58E /* OCMFunctionsPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F2E214A59F30089C58E /* OCMFunctionsPrivate.h */; };
+		C2079F84214A59F30089C58E /* OCMIndirectReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F2F214A59F30089C58E /* OCMIndirectReturnValueProvider.h */; };
+		C2079F85214A59F30089C58E /* OCMIndirectReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F30214A59F30089C58E /* OCMIndirectReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F86214A59F30089C58E /* OCMInvocationExpectation.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F31214A59F30089C58E /* OCMInvocationExpectation.h */; };
+		C2079F87214A59F30089C58E /* OCMInvocationExpectation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F32214A59F30089C58E /* OCMInvocationExpectation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F88214A59F30089C58E /* OCMInvocationMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F33214A59F30089C58E /* OCMInvocationMatcher.h */; };
+		C2079F89214A59F30089C58E /* OCMInvocationMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F34214A59F30089C58E /* OCMInvocationMatcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F8A214A59F30089C58E /* OCMInvocationStub.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F35214A59F30089C58E /* OCMInvocationStub.h */; };
+		C2079F8B214A59F30089C58E /* OCMInvocationStub.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F36214A59F30089C58E /* OCMInvocationStub.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F8C214A59F30089C58E /* OCMLocation.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F37214A59F30089C58E /* OCMLocation.h */; };
+		C2079F8D214A59F30089C58E /* OCMLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F38214A59F30089C58E /* OCMLocation.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F8E214A59F30089C58E /* OCMMacroState.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F39214A59F30089C58E /* OCMMacroState.h */; };
+		C2079F8F214A59F30089C58E /* OCMMacroState.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F3A214A59F30089C58E /* OCMMacroState.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F90214A59F30089C58E /* OCMNotificationPoster.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F3B214A59F30089C58E /* OCMNotificationPoster.h */; };
+		C2079F91214A59F30089C58E /* OCMNotificationPoster.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F3C214A59F30089C58E /* OCMNotificationPoster.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F92214A59F30089C58E /* OCMObserverRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F3D214A59F30089C58E /* OCMObserverRecorder.h */; };
+		C2079F93214A59F30089C58E /* OCMObserverRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F3E214A59F30089C58E /* OCMObserverRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F94214A59F30089C58E /* OCMock-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2079F3F214A59F30089C58E /* OCMock-Info.plist */; };
+		C2079F95214A59F30089C58E /* OCMock-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = C2079F40214A59F30089C58E /* OCMock-Prefix.pch */; };
+		C2079F96214A59F30089C58E /* OCMock.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F41214A59F30089C58E /* OCMock.h */; };
+		C2079F97214A59F30089C58E /* OCMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F42214A59F30089C58E /* OCMockObject.h */; };
+		C2079F98214A59F30089C58E /* OCMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F43214A59F30089C58E /* OCMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F99214A59F30089C58E /* OCMPassByRefSetter.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F44214A59F30089C58E /* OCMPassByRefSetter.h */; };
+		C2079F9A214A59F30089C58E /* OCMPassByRefSetter.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F45214A59F30089C58E /* OCMPassByRefSetter.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F9B214A59F30089C58E /* OCMRealObjectForwarder.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F46214A59F30089C58E /* OCMRealObjectForwarder.h */; };
+		C2079F9C214A59F30089C58E /* OCMRealObjectForwarder.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F47214A59F30089C58E /* OCMRealObjectForwarder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F9D214A59F30089C58E /* OCMRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F48214A59F30089C58E /* OCMRecorder.h */; };
+		C2079F9E214A59F30089C58E /* OCMRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F49214A59F30089C58E /* OCMRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079F9F214A59F30089C58E /* OCMReturnValueProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F4A214A59F30089C58E /* OCMReturnValueProvider.h */; };
+		C2079FA0214A59F30089C58E /* OCMReturnValueProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F4B214A59F30089C58E /* OCMReturnValueProvider.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079FA1214A59F30089C58E /* OCMStubRecorder.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F4C214A59F30089C58E /* OCMStubRecorder.h */; };
+		C2079FA2214A59F30089C58E /* OCMStubRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F4D214A59F30089C58E /* OCMStubRecorder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079FA3214A59F30089C58E /* OCMVerifier.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F4E214A59F30089C58E /* OCMVerifier.h */; };
+		C2079FA4214A59F30089C58E /* OCMVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F4F214A59F30089C58E /* OCMVerifier.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079FA5214A59F30089C58E /* OCObserverMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F50214A59F30089C58E /* OCObserverMockObject.h */; };
+		C2079FA6214A59F30089C58E /* OCObserverMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F51214A59F30089C58E /* OCObserverMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079FA7214A59F30089C58E /* OCPartialMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F52214A59F30089C58E /* OCPartialMockObject.h */; };
+		C2079FA8214A59F30089C58E /* OCPartialMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F53214A59F30089C58E /* OCPartialMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079FA9214A59F30089C58E /* OCProtocolMockObject.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079F54214A59F30089C58E /* OCProtocolMockObject.h */; };
+		C2079FAA214A59F30089C58E /* OCProtocolMockObject.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079F55214A59F30089C58E /* OCProtocolMockObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		C2079FAD214A5B3D0089C58E /* BlockHook.h in Headers */ = {isa = PBXBuildFile; fileRef = C2079FAB214A5B3D0089C58E /* BlockHook.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2079FAE214A5B3D0089C58E /* BlockHook.m in Sources */ = {isa = PBXBuildFile; fileRef = C2079FAC214A5B3D0089C58E /* BlockHook.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C2079EF2214A59910089C58E /* KMTrackOCMsg.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KMTrackOCMsg.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2079EF5214A59910089C58E /* KMTrackOCMsg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KMTrackOCMsg.h; sourceTree = "<group>"; };
+		C2079EF6214A59910089C58E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2079EFE214A59F30089C58E /* KMMethodHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMethodHook.h; sourceTree = "<group>"; };
+		C2079EFF214A59F30089C58E /* KMMethodHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMethodHook.m; sourceTree = "<group>"; };
+		C2079F01214A59F30089C58E /* ffi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi.h; sourceTree = "<group>"; };
+		C2079F02214A59F30089C58E /* ffi_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_arm.h; sourceTree = "<group>"; };
+		C2079F03214A59F30089C58E /* ffi_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_arm64.h; sourceTree = "<group>"; };
+		C2079F04214A59F30089C58E /* ffi_common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_common.h; sourceTree = "<group>"; };
+		C2079F05214A59F30089C58E /* ffi_i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_i386.h; sourceTree = "<group>"; };
+		C2079F06214A59F30089C58E /* ffi_x86_64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffi_x86_64.h; sourceTree = "<group>"; };
+		C2079F07214A59F30089C58E /* ffitarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget.h; sourceTree = "<group>"; };
+		C2079F08214A59F30089C58E /* ffitarget_arm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm.h; sourceTree = "<group>"; };
+		C2079F09214A59F30089C58E /* ffitarget_arm64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_arm64.h; sourceTree = "<group>"; };
+		C2079F0A214A59F30089C58E /* ffitarget_i386.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_i386.h; sourceTree = "<group>"; };
+		C2079F0B214A59F30089C58E /* ffitarget_x86_64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ffitarget_x86_64.h; sourceTree = "<group>"; };
+		C2079F0C214A59F30089C58E /* libffi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libffi.a; sourceTree = "<group>"; };
+		C2079F0F214A59F30089C58E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C2079F10214A59F30089C58E /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
+		C2079F11214A59F30089C58E /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
+		C2079F12214A59F30089C58E /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMethodSignature+OCMAdditions.h"; sourceTree = "<group>"; };
+		C2079F13214A59F30089C58E /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
+		C2079F14214A59F30089C58E /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		C2079F15214A59F30089C58E /* NSNotificationCenter+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+OCMAdditions.m"; sourceTree = "<group>"; };
+		C2079F16214A59F30089C58E /* NSObject+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+OCMAdditions.h"; sourceTree = "<group>"; };
+		C2079F17214A59F30089C58E /* NSObject+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+OCMAdditions.m"; sourceTree = "<group>"; };
+		C2079F18214A59F30089C58E /* NSValue+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSValue+OCMAdditions.h"; sourceTree = "<group>"; };
+		C2079F19214A59F30089C58E /* NSValue+OCMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSValue+OCMAdditions.m"; sourceTree = "<group>"; };
+		C2079F1A214A59F30089C58E /* OCClassMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCClassMockObject.h; sourceTree = "<group>"; };
+		C2079F1B214A59F30089C58E /* OCClassMockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCClassMockObject.m; sourceTree = "<group>"; };
+		C2079F1C214A59F30089C58E /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		C2079F1D214A59F30089C58E /* OCMArg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMArg.m; sourceTree = "<group>"; };
+		C2079F1E214A59F30089C58E /* OCMArgAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArgAction.h; sourceTree = "<group>"; };
+		C2079F1F214A59F30089C58E /* OCMArgAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMArgAction.m; sourceTree = "<group>"; };
+		C2079F20214A59F30089C58E /* OCMBlockArgCaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMBlockArgCaller.h; sourceTree = "<group>"; };
+		C2079F21214A59F30089C58E /* OCMBlockArgCaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMBlockArgCaller.m; sourceTree = "<group>"; };
+		C2079F22214A59F30089C58E /* OCMBlockCaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMBlockCaller.h; sourceTree = "<group>"; };
+		C2079F23214A59F30089C58E /* OCMBlockCaller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMBlockCaller.m; sourceTree = "<group>"; };
+		C2079F24214A59F30089C58E /* OCMBoxedReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMBoxedReturnValueProvider.h; sourceTree = "<group>"; };
+		C2079F25214A59F30089C58E /* OCMBoxedReturnValueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMBoxedReturnValueProvider.m; sourceTree = "<group>"; };
+		C2079F26214A59F30089C58E /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		C2079F27214A59F30089C58E /* OCMConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMConstraint.m; sourceTree = "<group>"; };
+		C2079F28214A59F30089C58E /* OCMExceptionReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMExceptionReturnValueProvider.h; sourceTree = "<group>"; };
+		C2079F29214A59F30089C58E /* OCMExceptionReturnValueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMExceptionReturnValueProvider.m; sourceTree = "<group>"; };
+		C2079F2A214A59F30089C58E /* OCMExpectationRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMExpectationRecorder.h; sourceTree = "<group>"; };
+		C2079F2B214A59F30089C58E /* OCMExpectationRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMExpectationRecorder.m; sourceTree = "<group>"; };
+		C2079F2C214A59F30089C58E /* OCMFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMFunctions.h; sourceTree = "<group>"; };
+		C2079F2D214A59F30089C58E /* OCMFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMFunctions.m; sourceTree = "<group>"; };
+		C2079F2E214A59F30089C58E /* OCMFunctionsPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMFunctionsPrivate.h; sourceTree = "<group>"; };
+		C2079F2F214A59F30089C58E /* OCMIndirectReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMIndirectReturnValueProvider.h; sourceTree = "<group>"; };
+		C2079F30214A59F30089C58E /* OCMIndirectReturnValueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMIndirectReturnValueProvider.m; sourceTree = "<group>"; };
+		C2079F31214A59F30089C58E /* OCMInvocationExpectation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMInvocationExpectation.h; sourceTree = "<group>"; };
+		C2079F32214A59F30089C58E /* OCMInvocationExpectation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMInvocationExpectation.m; sourceTree = "<group>"; };
+		C2079F33214A59F30089C58E /* OCMInvocationMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMInvocationMatcher.h; sourceTree = "<group>"; };
+		C2079F34214A59F30089C58E /* OCMInvocationMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMInvocationMatcher.m; sourceTree = "<group>"; };
+		C2079F35214A59F30089C58E /* OCMInvocationStub.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMInvocationStub.h; sourceTree = "<group>"; };
+		C2079F36214A59F30089C58E /* OCMInvocationStub.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMInvocationStub.m; sourceTree = "<group>"; };
+		C2079F37214A59F30089C58E /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		C2079F38214A59F30089C58E /* OCMLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMLocation.m; sourceTree = "<group>"; };
+		C2079F39214A59F30089C58E /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		C2079F3A214A59F30089C58E /* OCMMacroState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMMacroState.m; sourceTree = "<group>"; };
+		C2079F3B214A59F30089C58E /* OCMNotificationPoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMNotificationPoster.h; sourceTree = "<group>"; };
+		C2079F3C214A59F30089C58E /* OCMNotificationPoster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMNotificationPoster.m; sourceTree = "<group>"; };
+		C2079F3D214A59F30089C58E /* OCMObserverRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMObserverRecorder.h; sourceTree = "<group>"; };
+		C2079F3E214A59F30089C58E /* OCMObserverRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMObserverRecorder.m; sourceTree = "<group>"; };
+		C2079F3F214A59F30089C58E /* OCMock-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OCMock-Info.plist"; sourceTree = "<group>"; };
+		C2079F40214A59F30089C58E /* OCMock-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCMock-Prefix.pch"; sourceTree = "<group>"; };
+		C2079F41214A59F30089C58E /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		C2079F42214A59F30089C58E /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		C2079F43214A59F30089C58E /* OCMockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMockObject.m; sourceTree = "<group>"; };
+		C2079F44214A59F30089C58E /* OCMPassByRefSetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMPassByRefSetter.h; sourceTree = "<group>"; };
+		C2079F45214A59F30089C58E /* OCMPassByRefSetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMPassByRefSetter.m; sourceTree = "<group>"; };
+		C2079F46214A59F30089C58E /* OCMRealObjectForwarder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRealObjectForwarder.h; sourceTree = "<group>"; };
+		C2079F47214A59F30089C58E /* OCMRealObjectForwarder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMRealObjectForwarder.m; sourceTree = "<group>"; };
+		C2079F48214A59F30089C58E /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		C2079F49214A59F30089C58E /* OCMRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMRecorder.m; sourceTree = "<group>"; };
+		C2079F4A214A59F30089C58E /* OCMReturnValueProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMReturnValueProvider.h; sourceTree = "<group>"; };
+		C2079F4B214A59F30089C58E /* OCMReturnValueProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMReturnValueProvider.m; sourceTree = "<group>"; };
+		C2079F4C214A59F30089C58E /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		C2079F4D214A59F30089C58E /* OCMStubRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMStubRecorder.m; sourceTree = "<group>"; };
+		C2079F4E214A59F30089C58E /* OCMVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMVerifier.h; sourceTree = "<group>"; };
+		C2079F4F214A59F30089C58E /* OCMVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCMVerifier.m; sourceTree = "<group>"; };
+		C2079F50214A59F30089C58E /* OCObserverMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCObserverMockObject.h; sourceTree = "<group>"; };
+		C2079F51214A59F30089C58E /* OCObserverMockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCObserverMockObject.m; sourceTree = "<group>"; };
+		C2079F52214A59F30089C58E /* OCPartialMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCPartialMockObject.h; sourceTree = "<group>"; };
+		C2079F53214A59F30089C58E /* OCPartialMockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCPartialMockObject.m; sourceTree = "<group>"; };
+		C2079F54214A59F30089C58E /* OCProtocolMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCProtocolMockObject.h; sourceTree = "<group>"; };
+		C2079F55214A59F30089C58E /* OCProtocolMockObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCProtocolMockObject.m; sourceTree = "<group>"; };
+		C2079FAB214A5B3D0089C58E /* BlockHook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockHook.h; sourceTree = "<group>"; };
+		C2079FAC214A5B3D0089C58E /* BlockHook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockHook.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C2079EEE214A59910089C58E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2079F63214A59F30089C58E /* libffi.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C2079EE8214A59910089C58E = {
+			isa = PBXGroup;
+			children = (
+				C2079EF4214A59910089C58E /* KMTrackOCMsg */,
+				C2079EF3214A59910089C58E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C2079EF3214A59910089C58E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C2079EF2214A59910089C58E /* KMTrackOCMsg.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C2079EF4214A59910089C58E /* KMTrackOCMsg */ = {
+			isa = PBXGroup;
+			children = (
+				C2079EFD214A59F30089C58E /* KMTrackOCMsgLib */,
+				C2079EF5214A59910089C58E /* KMTrackOCMsg.h */,
+				C2079EF6214A59910089C58E /* Info.plist */,
+			);
+			path = KMTrackOCMsg;
+			sourceTree = "<group>";
+		};
+		C2079EFD214A59F30089C58E /* KMTrackOCMsgLib */ = {
+			isa = PBXGroup;
+			children = (
+				C2079FAB214A5B3D0089C58E /* BlockHook.h */,
+				C2079FAC214A5B3D0089C58E /* BlockHook.m */,
+				C2079EFE214A59F30089C58E /* KMMethodHook.h */,
+				C2079EFF214A59F30089C58E /* KMMethodHook.m */,
+				C2079F00214A59F30089C58E /* libffi */,
+				C2079F0D214A59F30089C58E /* OCMock */,
+			);
+			path = KMTrackOCMsgLib;
+			sourceTree = "<group>";
+		};
+		C2079F00214A59F30089C58E /* libffi */ = {
+			isa = PBXGroup;
+			children = (
+				C2079F01214A59F30089C58E /* ffi.h */,
+				C2079F02214A59F30089C58E /* ffi_arm.h */,
+				C2079F03214A59F30089C58E /* ffi_arm64.h */,
+				C2079F04214A59F30089C58E /* ffi_common.h */,
+				C2079F05214A59F30089C58E /* ffi_i386.h */,
+				C2079F06214A59F30089C58E /* ffi_x86_64.h */,
+				C2079F07214A59F30089C58E /* ffitarget.h */,
+				C2079F08214A59F30089C58E /* ffitarget_arm.h */,
+				C2079F09214A59F30089C58E /* ffitarget_arm64.h */,
+				C2079F0A214A59F30089C58E /* ffitarget_i386.h */,
+				C2079F0B214A59F30089C58E /* ffitarget_x86_64.h */,
+				C2079F0C214A59F30089C58E /* libffi.a */,
+			);
+			path = libffi;
+			sourceTree = "<group>";
+		};
+		C2079F0D214A59F30089C58E /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				C2079F0E214A59F30089C58E /* InfoPlist.strings */,
+				C2079F10214A59F30089C58E /* NSInvocation+OCMAdditions.h */,
+				C2079F11214A59F30089C58E /* NSInvocation+OCMAdditions.m */,
+				C2079F12214A59F30089C58E /* NSMethodSignature+OCMAdditions.h */,
+				C2079F13214A59F30089C58E /* NSMethodSignature+OCMAdditions.m */,
+				C2079F14214A59F30089C58E /* NSNotificationCenter+OCMAdditions.h */,
+				C2079F15214A59F30089C58E /* NSNotificationCenter+OCMAdditions.m */,
+				C2079F16214A59F30089C58E /* NSObject+OCMAdditions.h */,
+				C2079F17214A59F30089C58E /* NSObject+OCMAdditions.m */,
+				C2079F18214A59F30089C58E /* NSValue+OCMAdditions.h */,
+				C2079F19214A59F30089C58E /* NSValue+OCMAdditions.m */,
+				C2079F1A214A59F30089C58E /* OCClassMockObject.h */,
+				C2079F1B214A59F30089C58E /* OCClassMockObject.m */,
+				C2079F1C214A59F30089C58E /* OCMArg.h */,
+				C2079F1D214A59F30089C58E /* OCMArg.m */,
+				C2079F1E214A59F30089C58E /* OCMArgAction.h */,
+				C2079F1F214A59F30089C58E /* OCMArgAction.m */,
+				C2079F20214A59F30089C58E /* OCMBlockArgCaller.h */,
+				C2079F21214A59F30089C58E /* OCMBlockArgCaller.m */,
+				C2079F22214A59F30089C58E /* OCMBlockCaller.h */,
+				C2079F23214A59F30089C58E /* OCMBlockCaller.m */,
+				C2079F24214A59F30089C58E /* OCMBoxedReturnValueProvider.h */,
+				C2079F25214A59F30089C58E /* OCMBoxedReturnValueProvider.m */,
+				C2079F26214A59F30089C58E /* OCMConstraint.h */,
+				C2079F27214A59F30089C58E /* OCMConstraint.m */,
+				C2079F28214A59F30089C58E /* OCMExceptionReturnValueProvider.h */,
+				C2079F29214A59F30089C58E /* OCMExceptionReturnValueProvider.m */,
+				C2079F2A214A59F30089C58E /* OCMExpectationRecorder.h */,
+				C2079F2B214A59F30089C58E /* OCMExpectationRecorder.m */,
+				C2079F2C214A59F30089C58E /* OCMFunctions.h */,
+				C2079F2D214A59F30089C58E /* OCMFunctions.m */,
+				C2079F2E214A59F30089C58E /* OCMFunctionsPrivate.h */,
+				C2079F2F214A59F30089C58E /* OCMIndirectReturnValueProvider.h */,
+				C2079F30214A59F30089C58E /* OCMIndirectReturnValueProvider.m */,
+				C2079F31214A59F30089C58E /* OCMInvocationExpectation.h */,
+				C2079F32214A59F30089C58E /* OCMInvocationExpectation.m */,
+				C2079F33214A59F30089C58E /* OCMInvocationMatcher.h */,
+				C2079F34214A59F30089C58E /* OCMInvocationMatcher.m */,
+				C2079F35214A59F30089C58E /* OCMInvocationStub.h */,
+				C2079F36214A59F30089C58E /* OCMInvocationStub.m */,
+				C2079F37214A59F30089C58E /* OCMLocation.h */,
+				C2079F38214A59F30089C58E /* OCMLocation.m */,
+				C2079F39214A59F30089C58E /* OCMMacroState.h */,
+				C2079F3A214A59F30089C58E /* OCMMacroState.m */,
+				C2079F3B214A59F30089C58E /* OCMNotificationPoster.h */,
+				C2079F3C214A59F30089C58E /* OCMNotificationPoster.m */,
+				C2079F3D214A59F30089C58E /* OCMObserverRecorder.h */,
+				C2079F3E214A59F30089C58E /* OCMObserverRecorder.m */,
+				C2079F3F214A59F30089C58E /* OCMock-Info.plist */,
+				C2079F40214A59F30089C58E /* OCMock-Prefix.pch */,
+				C2079F41214A59F30089C58E /* OCMock.h */,
+				C2079F42214A59F30089C58E /* OCMockObject.h */,
+				C2079F43214A59F30089C58E /* OCMockObject.m */,
+				C2079F44214A59F30089C58E /* OCMPassByRefSetter.h */,
+				C2079F45214A59F30089C58E /* OCMPassByRefSetter.m */,
+				C2079F46214A59F30089C58E /* OCMRealObjectForwarder.h */,
+				C2079F47214A59F30089C58E /* OCMRealObjectForwarder.m */,
+				C2079F48214A59F30089C58E /* OCMRecorder.h */,
+				C2079F49214A59F30089C58E /* OCMRecorder.m */,
+				C2079F4A214A59F30089C58E /* OCMReturnValueProvider.h */,
+				C2079F4B214A59F30089C58E /* OCMReturnValueProvider.m */,
+				C2079F4C214A59F30089C58E /* OCMStubRecorder.h */,
+				C2079F4D214A59F30089C58E /* OCMStubRecorder.m */,
+				C2079F4E214A59F30089C58E /* OCMVerifier.h */,
+				C2079F4F214A59F30089C58E /* OCMVerifier.m */,
+				C2079F50214A59F30089C58E /* OCObserverMockObject.h */,
+				C2079F51214A59F30089C58E /* OCObserverMockObject.m */,
+				C2079F52214A59F30089C58E /* OCPartialMockObject.h */,
+				C2079F53214A59F30089C58E /* OCPartialMockObject.m */,
+				C2079F54214A59F30089C58E /* OCProtocolMockObject.h */,
+				C2079F55214A59F30089C58E /* OCProtocolMockObject.m */,
+			);
+			path = OCMock;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C2079EEF214A59910089C58E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2079F5F214A59F30089C58E /* ffitarget_arm.h in Headers */,
+				C2079FAD214A5B3D0089C58E /* BlockHook.h in Headers */,
+				C2079F56214A59F30089C58E /* KMMethodHook.h in Headers */,
+				C2079F6F214A59F30089C58E /* OCClassMockObject.h in Headers */,
+				C2079F96214A59F30089C58E /* OCMock.h in Headers */,
+				C2079F58214A59F30089C58E /* ffi.h in Headers */,
+				C2079F77214A59F30089C58E /* OCMBlockCaller.h in Headers */,
+				C2079F69214A59F30089C58E /* NSNotificationCenter+OCMAdditions.h in Headers */,
+				C2079F84214A59F30089C58E /* OCMIndirectReturnValueProvider.h in Headers */,
+				C2079F83214A59F30089C58E /* OCMFunctionsPrivate.h in Headers */,
+				C2079F65214A59F30089C58E /* NSInvocation+OCMAdditions.h in Headers */,
+				C2079F92214A59F30089C58E /* OCMObserverRecorder.h in Headers */,
+				C2079FA7214A59F30089C58E /* OCPartialMockObject.h in Headers */,
+				C2079F88214A59F30089C58E /* OCMInvocationMatcher.h in Headers */,
+				C2079FA5214A59F30089C58E /* OCObserverMockObject.h in Headers */,
+				C2079F75214A59F30089C58E /* OCMBlockArgCaller.h in Headers */,
+				C2079FA1214A59F30089C58E /* OCMStubRecorder.h in Headers */,
+				C2079F67214A59F30089C58E /* NSMethodSignature+OCMAdditions.h in Headers */,
+				C2079EF7214A59910089C58E /* KMTrackOCMsg.h in Headers */,
+				C2079F9D214A59F30089C58E /* OCMRecorder.h in Headers */,
+				C2079FA9214A59F30089C58E /* OCProtocolMockObject.h in Headers */,
+				C2079F99214A59F30089C58E /* OCMPassByRefSetter.h in Headers */,
+				C2079F97214A59F30089C58E /* OCMockObject.h in Headers */,
+				C2079F8E214A59F30089C58E /* OCMMacroState.h in Headers */,
+				C2079FA3214A59F30089C58E /* OCMVerifier.h in Headers */,
+				C2079F6B214A59F30089C58E /* NSObject+OCMAdditions.h in Headers */,
+				C2079F73214A59F30089C58E /* OCMArgAction.h in Headers */,
+				C2079F81214A59F30089C58E /* OCMFunctions.h in Headers */,
+				C2079F5A214A59F30089C58E /* ffi_arm64.h in Headers */,
+				C2079F95214A59F30089C58E /* OCMock-Prefix.pch in Headers */,
+				C2079F8C214A59F30089C58E /* OCMLocation.h in Headers */,
+				C2079F86214A59F30089C58E /* OCMInvocationExpectation.h in Headers */,
+				C2079F6D214A59F30089C58E /* NSValue+OCMAdditions.h in Headers */,
+				C2079F62214A59F30089C58E /* ffitarget_x86_64.h in Headers */,
+				C2079F7F214A59F30089C58E /* OCMExpectationRecorder.h in Headers */,
+				C2079F5C214A59F30089C58E /* ffi_i386.h in Headers */,
+				C2079F7B214A59F30089C58E /* OCMConstraint.h in Headers */,
+				C2079F5D214A59F30089C58E /* ffi_x86_64.h in Headers */,
+				C2079F59214A59F30089C58E /* ffi_arm.h in Headers */,
+				C2079F8A214A59F30089C58E /* OCMInvocationStub.h in Headers */,
+				C2079F7D214A59F30089C58E /* OCMExceptionReturnValueProvider.h in Headers */,
+				C2079F9B214A59F30089C58E /* OCMRealObjectForwarder.h in Headers */,
+				C2079F5E214A59F30089C58E /* ffitarget.h in Headers */,
+				C2079F60214A59F30089C58E /* ffitarget_arm64.h in Headers */,
+				C2079F79214A59F30089C58E /* OCMBoxedReturnValueProvider.h in Headers */,
+				C2079F90214A59F30089C58E /* OCMNotificationPoster.h in Headers */,
+				C2079F5B214A59F30089C58E /* ffi_common.h in Headers */,
+				C2079F9F214A59F30089C58E /* OCMReturnValueProvider.h in Headers */,
+				C2079F61214A59F30089C58E /* ffitarget_i386.h in Headers */,
+				C2079F71214A59F30089C58E /* OCMArg.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		C2079EF1214A59910089C58E /* KMTrackOCMsg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2079EFA214A59910089C58E /* Build configuration list for PBXNativeTarget "KMTrackOCMsg" */;
+			buildPhases = (
+				C2079EED214A59910089C58E /* Sources */,
+				C2079EEE214A59910089C58E /* Frameworks */,
+				C2079EEF214A59910089C58E /* Headers */,
+				C2079EF0214A59910089C58E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KMTrackOCMsg;
+			productName = KMTrackOCMsg;
+			productReference = C2079EF2214A59910089C58E /* KMTrackOCMsg.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C2079EE9214A59910089C58E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = allen;
+				TargetAttributes = {
+					C2079EF1214A59910089C58E = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = C2079EEC214A59910089C58E /* Build configuration list for PBXProject "KMTrackOCMsg" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C2079EE8214A59910089C58E;
+			productRefGroup = C2079EF3214A59910089C58E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C2079EF1214A59910089C58E /* KMTrackOCMsg */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C2079EF0214A59910089C58E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2079F94214A59F30089C58E /* OCMock-Info.plist in Resources */,
+				C2079F64214A59F30089C58E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C2079EED214A59910089C58E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2079FAA214A59F30089C58E /* OCProtocolMockObject.m in Sources */,
+				C2079F6A214A59F30089C58E /* NSNotificationCenter+OCMAdditions.m in Sources */,
+				C2079F9E214A59F30089C58E /* OCMRecorder.m in Sources */,
+				C2079F8B214A59F30089C58E /* OCMInvocationStub.m in Sources */,
+				C2079FAE214A5B3D0089C58E /* BlockHook.m in Sources */,
+				C2079F82214A59F30089C58E /* OCMFunctions.m in Sources */,
+				C2079F76214A59F30089C58E /* OCMBlockArgCaller.m in Sources */,
+				C2079F70214A59F30089C58E /* OCClassMockObject.m in Sources */,
+				C2079F66214A59F30089C58E /* NSInvocation+OCMAdditions.m in Sources */,
+				C2079F91214A59F30089C58E /* OCMNotificationPoster.m in Sources */,
+				C2079FA0214A59F30089C58E /* OCMReturnValueProvider.m in Sources */,
+				C2079F80214A59F30089C58E /* OCMExpectationRecorder.m in Sources */,
+				C2079FA4214A59F30089C58E /* OCMVerifier.m in Sources */,
+				C2079FA8214A59F30089C58E /* OCPartialMockObject.m in Sources */,
+				C2079F9A214A59F30089C58E /* OCMPassByRefSetter.m in Sources */,
+				C2079FA6214A59F30089C58E /* OCObserverMockObject.m in Sources */,
+				C2079F57214A59F30089C58E /* KMMethodHook.m in Sources */,
+				C2079F7A214A59F30089C58E /* OCMBoxedReturnValueProvider.m in Sources */,
+				C2079FA2214A59F30089C58E /* OCMStubRecorder.m in Sources */,
+				C2079F89214A59F30089C58E /* OCMInvocationMatcher.m in Sources */,
+				C2079F85214A59F30089C58E /* OCMIndirectReturnValueProvider.m in Sources */,
+				C2079F74214A59F30089C58E /* OCMArgAction.m in Sources */,
+				C2079F93214A59F30089C58E /* OCMObserverRecorder.m in Sources */,
+				C2079F72214A59F30089C58E /* OCMArg.m in Sources */,
+				C2079F98214A59F30089C58E /* OCMockObject.m in Sources */,
+				C2079F8D214A59F30089C58E /* OCMLocation.m in Sources */,
+				C2079F6C214A59F30089C58E /* NSObject+OCMAdditions.m in Sources */,
+				C2079F87214A59F30089C58E /* OCMInvocationExpectation.m in Sources */,
+				C2079F8F214A59F30089C58E /* OCMMacroState.m in Sources */,
+				C2079F78214A59F30089C58E /* OCMBlockCaller.m in Sources */,
+				C2079F7C214A59F30089C58E /* OCMConstraint.m in Sources */,
+				C2079F9C214A59F30089C58E /* OCMRealObjectForwarder.m in Sources */,
+				C2079F6E214A59F30089C58E /* NSValue+OCMAdditions.m in Sources */,
+				C2079F7E214A59F30089C58E /* OCMExceptionReturnValueProvider.m in Sources */,
+				C2079F68214A59F30089C58E /* NSMethodSignature+OCMAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		C2079F0E214A59F30089C58E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2079F0F214A59F30089C58E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C2079EF8214A59910089C58E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C2079EF9214A59910089C58E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C2079EFB214A59910089C58E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KMTrackOCMsg/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KMTrackOCMsg/KMTrackOCMsgLib/libffi",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.allen.KMTrackOCMsg;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C2079EFC214A59910089C58E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = KMTrackOCMsg/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/KMTrackOCMsg/KMTrackOCMsgLib/libffi",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.allen.KMTrackOCMsg;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C2079EEC214A59910089C58E /* Build configuration list for PBXProject "KMTrackOCMsg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2079EF8214A59910089C58E /* Debug */,
+				C2079EF9214A59910089C58E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2079EFA214A59910089C58E /* Build configuration list for PBXNativeTarget "KMTrackOCMsg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2079EFB214A59910089C58E /* Debug */,
+				C2079EFC214A59910089C58E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C2079EE9214A59910089C58E /* Project object */;
+}

@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "KMMethodHook.h"
+#import <KMTrackOCMsg/KMMethodHook.h>
 #import "TestObject.h"
 #import <WebKit/WebKit.h>
 #import <AVKit/AVKit.h>
@@ -24,8 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [KMMethodHook trackSelectorMsg:NSClassFromString(@"NSURL")];
-    [KMMethodHook trackSelectorMsg:[AVPlayerViewController class]];
+    [KMMethodHook trackSelectorMsg:NSClassFromString(@"NSURL")];
+//    [KMMethodHook trackSelectorMsg:[AVPlayerViewController class]];
     
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     // 允许视频播放

@@ -131,6 +131,10 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
             method = class_getClassMethod(cls, selector);
             isClassMethod = YES;
         }
+        if (method == nil) {
+            NSLog(@"KM error:this selector not exist!");
+            return;
+        }
         typeDescription = (char *)method_getTypeEncoding(method);
     }
     
@@ -195,6 +199,23 @@ static void overrideMethod(Class cls, NSString *selectorName, const char *typeDe
     
     [KMMethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:YES];
     
+}
++(void)trackSelectorMsg:(Class)cls selectors:(NSArray *)selectors
+{
+    if (cls == nil) {
+        NSLog(@"class is nil");
+        return;
+    }
+    for (NSString *selectorName in selectors) {
+        overrideMethod(cls,selectorName,NULL);
+    }
+    
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(methodSignatureForSelector:) originalSEL:@selector(methodSignatureForSelectorOriginal:) myselfSEL:@selector(methodSignatureForSelectorMySelf:) isClassMethod:NO];
+    
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:NO];
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(methodSignatureForSelector:) originalSEL:@selector(methodSignatureForSelectorOriginal:) myselfSEL:@selector(methodSignatureForSelectorMySelf:) isClassMethod:YES];
+    
+    [KMMethodHook hookMethedClass:cls hookSEL:@selector(forwardInvocation:) originalSEL:@selector(forwardInvocationOriginal:) myselfSEL:@selector(forwardInvocationMySelf:) isClassMethod:YES];
 }
 - (NSMethodSignature *)methodSignatureForSelectorMySelf:(SEL)aSelector {
     
