@@ -72,12 +72,12 @@ void crashFunction(id self, SEL _cmd, ...) {
     Method * mlist = class_copyMethodList(class, &mc);
     NSLog(@"%d methods", mc);
     for(i=0;i<mc;i++){
-        NSLog(@"class %@ Method no #%d: %s",NSStringFromClass(class), i, sel_getName(method_getName(mlist[i])));
+        
         NSString *selector = [NSString stringWithUTF8String:sel_getName(method_getName(mlist[i]))] ;
-        NSString *preSelector = [selector lowercaseString];
+        NSString *preSelector = selector;
         preSelector = [preSelector stringByTrimmingCharactersInSet:
          [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([preSelector hasPrefix:@"forwardingtargetforselector"]||[preSelector hasPrefix:@"methodsignatureforselector"]||[preSelector hasPrefix:@"forwardinvocation"]||[preSelector containsString:@"retain"]||[preSelector containsString:@"release"]||[preSelector containsString:@"autorelease"]||[preSelector hasPrefix:@".cxx_"]||[preSelector containsString:@"deallocat"]||[preSelector hasPrefix:@"ORIG"]||[preSelector hasPrefix:@"dealloc"]||[preSelector hasPrefix:@"initialize"]||preSelector.length<=0) {
+        if ([preSelector containsString:@"respondsToSelector"]||[preSelector hasPrefix:@"forwardingTargetForSelector"]||[preSelector containsString:@"methodSignatureForSelector"]||[preSelector hasPrefix:@"forwardInvocation"]||[preSelector containsString:@"retain"]||[preSelector containsString:@"release"]||[preSelector containsString:@"autorelease"]||[preSelector hasPrefix:@".cxx_"]||[preSelector containsString:@"deallocat"]||[preSelector hasPrefix:@"ORIG"]||[preSelector hasPrefix:@"dealloc"]||[preSelector hasPrefix:@"initialize"]||preSelector.length<=0) {
             continue;
         }
         //忽略set的方法,避免影响kvo
@@ -85,6 +85,7 @@ void crashFunction(id self, SEL _cmd, ...) {
         {
             continue;
         }
+        NSLog(@"hook %@ Method no #%d: %s",NSStringFromClass(class), i, sel_getName(method_getName(mlist[i])));
         overrideMethod(class,selector,NULL);
     }
     free(mlist); // 7
@@ -95,10 +96,10 @@ void crashFunction(id self, SEL _cmd, ...) {
     for(i=0;i<mc;i++){
         NSLog(@"class %@ Method no #%d: %s",NSStringFromClass(class), i, sel_getName(method_getName(mlist[i])));
         NSString *selector = [NSString stringWithUTF8String:sel_getName(method_getName(mlist[i]))] ;
-        NSString *preSelector = [selector lowercaseString];
+        NSString *preSelector = selector;
         preSelector = [preSelector stringByTrimmingCharactersInSet:
                        [NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if ([preSelector hasPrefix:@"forwardingtargetforselector"]||[preSelector hasPrefix:@"methodsignatureforselector"]||[preSelector hasPrefix:@"forwardinvocation"]||[preSelector hasPrefix:@"initialize"]||preSelector.length<=0) {
+        if ([preSelector containsString:@"respondsToSelector"]||[preSelector hasPrefix:@"respondsToSelector"]||[preSelector hasPrefix:@"forwardingTargetForSelector"]||[preSelector hasPrefix:@"methodSignatureForSelector"]||[preSelector hasPrefix:@"forwardInvocation"]||[preSelector hasPrefix:@"initialize"]||preSelector.length<=0) {
             continue;
         }
         overrideMethod(class,selector,NULL);
